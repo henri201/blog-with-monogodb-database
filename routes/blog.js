@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../data/database');
+const db = require('../data/database');  //go up one to get database
 const mongodb = require('mongodb');
 
 const ObjectId = mongodb.ObjectId;
