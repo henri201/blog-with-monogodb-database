@@ -10,7 +10,8 @@ router.get('/', function(req, res) {
   res.redirect('/posts');
 });
 
-router.get('/posts', function(req, res) {
+router.get('/posts', async function(req, res) {
+  const posts = db.getDb().collection('posts').find().toArray();
   res.render('posts-list');
 });
 
