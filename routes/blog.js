@@ -11,8 +11,8 @@ router.get('/', function(req, res) {
 });
 
 router.get('/posts', async function(req, res) {
-  const posts = db.getDb().collection('posts').find().toArray();
-  res.render('posts-list');
+  const posts = db.getDb().collection('posts').find({}, {title: 1, summary: 1, 'author.name': 1}).toArray();   //projection
+  res.render('posts-list', {posts: posts});
 });
 
 router.get('/new-post', async function(req, res) {
