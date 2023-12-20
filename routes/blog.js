@@ -38,7 +38,7 @@ router.post('/posts', async function(req, res){
     }
   };
   const result = await db.getDb().collection('posts').insertOne(newPost);
-  console.log(result);
+  console.log(result);  //checking result, temporary
   res.redirect('/posts');
 });
 
